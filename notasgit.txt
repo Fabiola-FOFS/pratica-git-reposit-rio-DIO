@@ -1,0 +1,52 @@
+o que aprendi sobre o modulo de Git :
+O SHA1 no Git é um algoritmo de hash usado para identificar de forma única objetos no repositório Git, como commits, blobs, árvores e tags.
+Detalhes sobre o SHA1 no Git:
+Significado: SHA1 é a sigla para "Secure Hash Algorithm 1". Ele gera um valor de hash fixo de 40 caracteres (160 bits) baseado nos dados de entrada.
+
+
+Formato: Um SHA1 no Git é representado como uma sequência hexadecimal, como:
+
+ 9b7d2c4ab1e1a2a6f62d53474b1b6e75ec7b456a
+
+
+Uso no Git:
+
+
+Cada commit é identificado por um SHA1 único, baseado no conteúdo do commit (mensagem, autor, data, etc.) e no estado do repositório.
+Outros objetos, como arquivos (blobs) e estruturas de diretórios (árvores), também recebem hashes SHA1 baseados em seus conteúdos.
+Isso garante a integridade e rastreabilidade dos dados, já que qualquer modificação no conteúdo muda o hash.
+Importância:
+
+
+Integridade: O Git usa SHA1 para garantir que os dados armazenados não foram alterados ou corrompidos.
+Identificação única: Um SHA1 é único para o estado exato de um repositório ou objeto, permitindo localizar commits e outros objetos rapidamente.
+Rastreamento de mudanças: Ele facilita o rastreamento e a auditoria de alterações no histórico do repositório.
+Limitações e mudanças no Git:
+Embora o SHA1 seja amplamente usado no Git, ele não é mais considerado seguro contra colisões em aplicações críticas. Por isso, o Git está migrando para o algoritmo SHA-256 em versões mais recentes para aumentar a segurança e evitar potenciais ataques de colisão.
+
+No git : openssl sha1 texto.txt (assim consigo ver as chaves que ele gera) 
+
+Objetos do GIT 
+OBJETO BLOB:
+É um bloco com : Tipo de objeto, tamanho, \0, SHA 
+
+O git armazena metadados do git 
+
+
+Objeto TREE:
+BLOCO que guarda: nome do arquivo, blob, sha, tamanho, tipo, \0
+Responsável por montar a estrutura de onde está o arquivo, pode apontar para outras árvores. E possui um sha1 da árvore. Qualquer mudança muda os sha1
+
+Objeto commit:
+Tem o sha1 do arquivo, do blob da árvore, e todas as demais informações, aponta para o autor e a mensagem, timestamp (carimbo de tempo, hora e data) e possui encriptação própria também (sha1). 
+
+
+Por isso o git é um sistema distribuído e seguro, pois é possível rastrear qualquer mudança. Dá para trabalhar em colaboração de forma segura. 
+
+
+Chaves SSH: 
+Chave que será uma assinatura da nossa máquina 
+
+Flags: 
+Git -a mostra pastas ocultas 
+Git init - cria um repositório
